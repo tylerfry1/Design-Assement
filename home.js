@@ -53,7 +53,13 @@ const greetUser = username => {
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
-deliveryAreaZipCodes.forEach((elem,i) =>console.log('Your in our delivery zone'))
+const zipCode = []
+if (deliveryAreaZipCodes === zipcode){
+    console.log("You're in our delivery zone")
+} else{
+    console.log("Sorry, we can't deliver to that address")
+}
+
 
 
 
