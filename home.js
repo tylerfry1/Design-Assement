@@ -117,7 +117,7 @@ const deals = [
 */
 
 //CODE HERE
-deals.title='10% Off!'
+deals[0].title='10% Off!'
 
 
 
@@ -135,4 +135,4 @@ deals.title='10% Off!'
 */
 
 //CODE HERE
-deals.desc='This Deal Lasts Until the end of April'
+deals[0].desc='This Deal Lasts Until the end of April'

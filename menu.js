@@ -107,6 +107,52 @@ console.log(property)
 */
 
 //CODE HERE
+const menu =[
+    {
+        name:'dragon roll',
+        price: 11.99,
+        category: 'Entree',
+        popularity: 2,
+        rating: 8.5,
+        tags:['eel','delicious']
+
+
+
+    },
+    {
+        name:'Chicken Parm',
+        price: 14.99,
+        category:'Entree',
+        popularity: 3,
+        rating: 10,
+        tags:['italian','yummy']
+    },
+    {
+        name:'Pasta',
+        price: 8.99,
+        category:'Entree',
+        popularity: 2,
+        rating: 9.5,
+        tags:['italian','kid-friendly']
+    },
+    {
+        name: 'Nachos',
+        price: 5.99,
+        category: 'Appitizer',
+        popularity:2.5,
+        rating: 6.6,
+        tags:['finger food','budget friendly'],
+    },
+    {
+        name:'Steak',
+        price: 11.99,
+        category:'Entree',
+        popularity:3.5,
+        rating:2.2,
+        tags:['yummy','BBQ']
+    },
+]
+
 
 
     
@@ -130,7 +176,8 @@ console.log(property)
 //CODE HERE
 
 // const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+const filteredFood = menu.filter(food => food.tags.includes('italian'))
+console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -173,6 +220,21 @@ console.log(property)
 */
 
 //CODE HERE
+function filterByProperty(property,number,type){
+    const filteredmenu= menu.filter((food)=> {
+        if (type === 'above'){ 
+        return food[property] > number
+        } else if (type === 'below'){
+            return food[property] < number
+        }
+
+
+
+     } )
+     return filteredmenu
+}
+console.log(filterByProperty('rating',4.5,'above'))
+
 
 
 /*
