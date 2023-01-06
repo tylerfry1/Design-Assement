@@ -20,20 +20,15 @@
 */
 
 //CODE HERE
-class Employee{
-    constructor(name,shifts){
-        this.name=name
-        this.shifts= shifts
-        this.getSchedule = function (){
-            console.log('${name} works on ${shifts}')
-        }
-    }
-    
-  
-    
+class Employee {
+  constructor(name, shifts) {
+    this.name = name;
+    this.shifts = shifts;
+    this.getSchedule = function () {
+      console.log(`${this.name} works on ${this.shifts}`);
+    };
+  }
 }
-
-
 
 /*
     Create a new instance of your class.
@@ -46,16 +41,7 @@ class Employee{
 */
 
 //CODE HERE
-const name= Jess
-const shifts = weekdaymornings/weekdayafternoons
-
-class empOne{
-    constructor(name,shifts){
-        this.name=name;
-        this.shifts=shifts;
-    }
-    
-}
+const empOne = new Employee("Jess", "weekday mornings");
 
 /*
     Call the `getSchedule` method on the
@@ -63,10 +49,8 @@ class empOne{
 */
 
 //CODE HERE
-getSchedule(empOne)
-
-
-
+// getSchedule(empOne);
+empOne.getSchedule();
 
 /*
     Make a copy of the empOne object
@@ -82,10 +66,9 @@ getSchedule(empOne)
 
 //CODE HERE
 let empTwo = {
-    ...empOne
+  ...empOne,
 };
-empTwo.name=Nick
-
+empTwo.name = "Nick";
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -111,21 +94,18 @@ empTwo.name=Nick
 */
 
 //CODE HERE
-class manager extends Employee{
-    constructor(name,shift,employees){
-        super(name,shift);
-        this.employees=[];
-    }
-getemployees(){
-    console.log(this.name,'manages these',this.employees)
+class Manager extends Employee {
+  constructor(name, shift, employees) {
+    super(name, shift);
+    this.employees = employees;
+  }
+  getEmployees() {
+    console.log(this.name, "manages these", this.employees);
+  }
+  addEmployee(emp) {
+    this.employees.push(emp);
+  }
 }
-addEmployee (emp){
-    this.employees.push(emp)
-}
-}
-
-
-
 
 /*
     Create a new instance of your class.
@@ -139,9 +119,7 @@ addEmployee (emp){
 */
 
 //CODE HERE
-const manager = new manager('Winston','weekday mornings','weekdayafternoon'['Cece, Schmidt'])
-
-
+const manager = new Manager("Winston", "weekday mornings", ["Cece, Schmidt"]);
 
 /*
     Call the `getEmployees` method on the
@@ -149,7 +127,7 @@ const manager = new manager('Winston','weekday mornings','weekdayafternoon'['Cec
 */
 
 //CODE HERE
-manager.getemployees()
+manager.getEmployees();
 
 /*
     Call the `addEmployee` method on the 
@@ -157,8 +135,8 @@ manager.getemployees()
     'Coach' or whatever name you'd like.
 */
 
-//CODE HERE 
-manager.getemployees("Coach")
+//CODE HERE
+manager.addEmployee("Coach");
 
 /*
     Call the `getEmployees` method on the
@@ -167,4 +145,4 @@ manager.getemployees("Coach")
 */
 
 //CODE HERE
-manager.getemployees()
+manager.getEmployees();
